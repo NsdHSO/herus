@@ -20,6 +20,7 @@
           "apps/apps/src/assets"
         ],
         "styles": [
+          "node_modules/reset-css/reset.css",
           "apps/apps/src/styles.scss"
         ],
         "scripts": [],
