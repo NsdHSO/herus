@@ -12,7 +12,7 @@ const routes: Routes = [
     component: IntegrateAppAppsComponent,
     children  : [
       {
-        path         : 'driver',
+        path         : '',
         loadChildren : () => import('driver/Module').then ( m => m.DriverModule ),
       },
     ]
