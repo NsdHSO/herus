@@ -1,25 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { loadRemoteModule } from '@angular-architects/module-federation';
-import { environment } from '../environments/environment';
-
+import { CommonModule }              from '@angular/common';
+import { NgModule }                  from '@angular/core';
+import {
+  RouterModule,
+  Routes
+}                                    from '@angular/router';
 
 const routes : Routes = [
   {
-    path         : '',
-    loadChildren : () => import('driver/Module').then ( m => m.DriverModule ),
+    path      : '',
+    loadChildren : () => import('./integrate-all-apps/integrate-all-apps.module').then ( m => m.IntegrateAllAppsModule ),
   },
+
 ]
 
-@NgModule({
-  declarations: [],
-  imports: [
+@NgModule ( {
+  declarations : [],
+  imports      : [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot ( routes )
   ],
-  exports: [
-      RouterModule
+  exports      : [
+    RouterModule
   ]
-})
-export class AppRoutingModule { }
+} )
+export class AppRoutingModule {}
