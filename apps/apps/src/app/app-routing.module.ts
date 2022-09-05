@@ -8,12 +8,7 @@ import { environment } from '../environments/environment';
 const routes : Routes = [
   {
     path         : '',
-    loadChildren : () =>
-      loadRemoteModule ( {
-        type          : 'module',
-        remoteEntry   : `${ environment.apps.driver }remoteEntry.js`,
-        exposedModule : './Module',
-      } ).then ( ( m ) => m.DriverModule ),
+    loadChildren : () => import('driver/Module').then ( m => m.DriverModule ),
   },
 ]
 

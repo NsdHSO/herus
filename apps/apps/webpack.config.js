@@ -10,6 +10,10 @@ module.exports = withModuleFederationPlugin({
       './Module': './apps/apps/src/app/app.module.ts',
   },
 
+  remotes: {
+    "driver": "https://zechia.vercel.app/remoteEntry.js",
+  },
+
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
